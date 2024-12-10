@@ -57,10 +57,10 @@ func main() {
 
 			isValidUpdate := true
 
-			parts := strings.Split(line, ",")
-			for i := 0; i < len(parts)-1; i++ {
-				num1, err1 := strconv.Atoi(parts[i])
-				num2, err2 := strconv.Atoi(parts[i+1])
+			update := strings.Split(line, ",")
+			for i := 0; i < len(update)-1; i++ {
+				num1, err1 := strconv.Atoi(update[i])
+				num2, err2 := strconv.Atoi(update[i+1])
 
 				if err1 != nil || err2 != nil {
 					log.Fatalf("Error converting numbers on line: %s", line)
@@ -79,8 +79,8 @@ func main() {
 			}
 			fmt.Printf("Update valid: %t \n", isValidUpdate)
 
-			if isValidUpdate && len(parts) > 1 {
-				sum += getMiddle(parts)
+			if isValidUpdate && len(update) > 1 {
+				sum += getMiddle(update)
 			}
 		}
 	}
